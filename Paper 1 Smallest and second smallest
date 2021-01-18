@@ -1,0 +1,39 @@
+#include <stdio.h> 
+#include <limits.h> 
+  
+void print2Small(int arr[], int size) 
+{ 
+    int i, first, second; 
+  
+    if (size < 2) 
+    { 
+        printf(" Invalid Input "); 
+        return; 
+    } 
+  
+    first = second = INT_MAX; 
+    for (i = 0; i < size ; i ++) 
+    { 
+        if (arr[i] < first) 
+        { 
+            second = first; 
+            first = arr[i]; 
+        } 
+  
+        else if (arr[i] < second && arr[i] != first) 
+            second = arr[i]; 
+    } 
+    if (second == INT_MAX) 
+        printf("There is no second smallest element\n"); 
+    else
+        printf("The smallest element is %d and second "
+               "Smallest element is %d\n", first, second); 
+} 
+  
+int main() 
+{ 
+    int arr[] = {16, 13, 61, 6, 4, 2}; 
+    int n = sizeof(arr)/sizeof(arr[0]); 
+    print2Small(arr, n); 
+    return 0; 
+}
