@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main()
+{
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int input=0;input<n;input++){
+        cin>>arr[input];
+    }
+
+    for (int i = 0; i <n; i++) {
+        arr[arr[i] %n]
+            = arr[arr[i] % n] + n;
+    }
+    for (int i = 0; i < n; i++) {
+        if (arr[i] >= n * 2) {
+            cout << i << " " << endl;
+        }
+    }
+    return 0;
+}
